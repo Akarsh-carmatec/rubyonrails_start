@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="card-header" data-background-color="orange">
+        <h4 class="title">Employees Stats</h4>
+        <p class="category">New employees on 15th September, 2016</p>
+      </div>
+      <div class="card-content table-responsive">
+        <table class="table table-hover">
+          <thead class="text-warning">
+            <th>
+              <div class="checkbox">
+                <label>
+                  <input id="check-box-selectall" type="checkbox" name="optionsCheckboxes">
+                </label>
+              </div>
+            </th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email ID</th>
+            <th>Country</th>
+            <th>Action</th>
+          </thead>
+          <tbody>
+            <% @userlist.each do |r| %>
+            <tr>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input class="select_checkbox" type="checkbox" name="optionsCheckboxes">
+                  </label>
+                </div>
+              </td>
+              <td><%= r.id %></td>
+              <td><%= r.firstname %> <%= r.middlename %> <%= r.lastname %></td>
+              <td><%= r.email_id %></td>
+              <td><%= r.company %></td>
+              <td class="actions">
+                <%= link_to "go", userslist_path(r.id) %>
+                <a href="#" rel="tooltip" title="view" class="btn btn-info btn-simple btn-xs">
+                  <i class="material-icons">art_track</i>
+                </a>
+                <button type="button" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
+                  <i class="material-icons">edit</i>
+                </button>
+                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                  <i class="material-icons">close</i>
+                </button>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <button class="btn btn-danger delete_all" style="display: none;">Delete All<div class="ripple-container"></div></button>
+  </div>
+</div>
+      

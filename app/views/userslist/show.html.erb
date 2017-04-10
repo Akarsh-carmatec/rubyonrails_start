@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header" data-background-color="purple">
+        <h4 class="title"><%= @user.firstname %> <%= @user.middlename %> <%= @user.lastname %></h4>
+        <p class="category"><%= @user.email_id %></p>
+      </div>
+      <div class="card-content">
+        <table class="user_view">
+          <tr>
+            <td class="key"><h5>Full Name</h5></td>
+            <td class="value"><h5><%= @user.firstname %> <%= @user.middlename %> <%= @user.lastname %></h5></td>
+          </tr>
+          <tr>
+            <td class="key"><h5>Email ID</h5></td>
+            <td class="value"><h5><%= @user.email_id %></h5></td>
+          </tr>
+          <tr>
+            <td class="key"><h5>Company</h5></td>
+            <td class="value"><h5><%= @user.company %></h5></td>
+          </tr>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+</div>

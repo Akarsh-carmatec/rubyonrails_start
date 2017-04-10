@@ -1,0 +1,31 @@
+<div class="sidebar" data-color="purple" data-image='assets/sidebar-1.jpg'>
+
+  <div class="logo">
+    <a href="http://www.creative-tim.com" class="simple-text">
+      Creative Tim
+    </a>
+  </div>
+
+  <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class="<%= params[:controller] == "homes" ? 'active': '' %>">
+                <a href="/">
+                    <i class="material-icons">dashboard</i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li class="<%= params[:controller] == "userslist" ? 'active': '' %>">
+                <a href="/userslist">
+                    <i class="material-icons">person</i>
+                    <p>User Profile</p>
+                </a>
+            </li>
+            <li class="<%= params[:controller] == "variants" ? 'active': '' %>">
+                <a href="/variants">
+                    <i class="material-icons">person</i>
+                    <p>Variants</p>
+                </a>
+            </li>
+        </ul>
+  </div>
+</div>
