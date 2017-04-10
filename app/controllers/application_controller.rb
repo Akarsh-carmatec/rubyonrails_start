@@ -9,9 +9,22 @@ class ApplicationController < ActionController::Base
   private
  
   def require_login
-    unless user_signed_in?
+    if !user_signed_in?
       flash[:error] = "You must be logged in to access this section"
       redirect_to new_user_session_url # halts request cycle
     end
   end
+
+  layout :layout_by_resource
+
+  private
+
+  def layout_by_resource
+    if devise_controller?
+      "devise_layout"
+    else
+      "application"
+    end
+  end
+  
 end

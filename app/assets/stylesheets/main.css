@@ -22,3 +22,17 @@ td.actions .btn.btn-xs{
 	z-index: 999;
 	display: none;
 }
+
+
+.shared_links a{
+	width:50%;
+	display:block;
+	padding: 5px 0px;
+	float: left;
+}
+.shared_links a:first-child{
+		text-align:left;
+	}
+.shared_links a:last-child{
+		text-align:right;
+	}
