@@ -18,7 +18,7 @@
         <td><%= variant.description %></td>
         <td><%= link_to 'Show', variant %></td>
         <td><%= link_to 'Edit', edit_variant_path(variant) %></td>
-        <td><%= link_to 'Destroy', variant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', variant, method: :delete, data: { confirm: 'Are you sure?' },:remote => true, :class => 'delete_pony' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,3 +27,8 @@
 <br>
 
 <%= link_to 'New Variant', new_variant_path %>
+<script type="text/javascript">
+  $('.delete_pony').bind('ajax:success', function() {
+     $(this).closest('tr').fadeOut();
+  });
+</script>

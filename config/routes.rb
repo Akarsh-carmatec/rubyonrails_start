@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'homes#index'
   #get 'users' => 'users#index'
+
+  resources :homes
+
   resources :userslist do
    get :blog, on: :collection
   end

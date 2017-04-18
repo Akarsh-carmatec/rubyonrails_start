@@ -4,4 +4,7 @@ class HomesController < ApplicationController
 		@product = Product.all
 		@userlist = Userlist.all
 	end
+
+	  
+
 end

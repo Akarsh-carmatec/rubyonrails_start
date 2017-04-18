@@ -52,14 +52,16 @@ class VariantsController < ApplicationController
     end
   end
 
-  # DELETE /variants/1
-  # DELETE /variants/1.json
+  # DELETE /ponies/1
+  # DELETE /ponies/1.json
   def destroy
-    @variant.destroy
-    respond_to do |format|
-      format.html { redirect_to variants_url, notice: 'Variant was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+     @variant.destroy
+     
+     respond_to do |format|
+        format.html { redirect_to variants_url }
+        format.json { head :no_content }
+        format.js   { render :layout => false }
+     end   
   end
 
   private
